@@ -3,8 +3,11 @@
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using Microsoft.Practices.Unity.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Unity;
+using Unity.Exceptions;
+using Unity.Lifetime;
+using Unity.Mvc;
 
 namespace Microsoft.Practices.Unity.WebIntegation.Tests
 {
@@ -108,9 +111,9 @@ namespace Microsoft.Practices.Unity.WebIntegation.Tests
 
             public IFoo Foo { get; set; }
 
-            void IController.Execute(System.Web.Routing.RequestContext requestContext)
+
+            public void Execute(System.Web.Routing.RequestContext requestContext)
             {
-                throw new System.NotImplementedException();
             }
         }
 

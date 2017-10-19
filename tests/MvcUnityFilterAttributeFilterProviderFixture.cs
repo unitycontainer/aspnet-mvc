@@ -3,8 +3,10 @@
 using System;
 using System.Linq;
 using System.Web.Mvc;
-using Microsoft.Practices.Unity.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Unity;
+using Unity.Injection;
+using Unity.Mvc;
 
 namespace Microsoft.Practices.Unity.WebIntegation.Tests
 {

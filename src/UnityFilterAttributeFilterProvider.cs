@@ -1,16 +1,16 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
-using System.Collections.Generic;
 using System.Web.Mvc;
+using System.Collections.Generic;
 
-namespace Microsoft.Practices.Unity.Mvc
+namespace Unity.Mvc
 {
     /// <summary>
     /// Defines a filter provider for filter attributes that support injection of Unity dependencies.
     /// </summary>
     public class UnityFilterAttributeFilterProvider : FilterAttributeFilterProvider
     {
-        private readonly IUnityContainer container;
+        private readonly IUnityContainer _container;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UnityFilterAttributeFilterProvider"/> class.
@@ -18,7 +18,7 @@ namespace Microsoft.Practices.Unity.Mvc
         /// <param name="container">The <see cref="IUnityContainer"/> that will be used to inject the filters.</param>
         public UnityFilterAttributeFilterProvider(IUnityContainer container)
         {
-            this.container = container;
+            _container = container;
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace Microsoft.Practices.Unity.Mvc
 
             foreach (var item in list)
             {
-                this.container.BuildUp(item.GetType(), item);
+                _container.BuildUp(item.GetType(), item);
             }
 
             return list;
@@ -51,7 +51,7 @@ namespace Microsoft.Practices.Unity.Mvc
 
             foreach (var item in list)
             {
-                this.container.BuildUp(item.GetType(), item);
+                _container.BuildUp(item.GetType(), item);
             }
 
             return list;

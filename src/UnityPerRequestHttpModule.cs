@@ -2,13 +2,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Web;
-using Microsoft.Practices.Unity.Mvc.Properties;
-using Microsoft.Practices.Unity.Utility;
 
-namespace Microsoft.Practices.Unity.Mvc
+namespace Unity.Mvc
 {
     /// <summary>
     /// Implementation of the <see cref="IHttpModule"/> interface that provides support for using the
@@ -25,9 +22,7 @@ namespace Microsoft.Practices.Unity.Mvc
 
             if (dict != null)
             {
-                object obj = null;
-
-                if (dict.TryGetValue(lifetimeManagerKey, out obj))
+                if (dict.TryGetValue(lifetimeManagerKey, out var obj))
                 {
                     return obj;
                 }
@@ -62,11 +57,9 @@ namespace Microsoft.Practices.Unity.Mvc
         /// </summary>
         /// <param name="context">An <see cref="HttpApplication"/> that provides access to the methods, properties,
         /// and events common to all application objects within an ASP.NET application.</param>
-        [SuppressMessage("Microsoft.Design", "CA1062:Validate arguments of public methods", MessageId = "0", Justification = "Validated with Guard class")]
         public void Init(HttpApplication context)
         {
-            Guard.ArgumentNotNull(context, "context");
-            context.EndRequest += OnEndRequest;
+            (context ?? throw new ArgumentNullException(nameof(context))).EndRequest += OnEndRequest;
         }
 
         private void OnEndRequest(object sender, EventArgs e)
@@ -88,7 +81,8 @@ namespace Microsoft.Practices.Unity.Mvc
         {
             if (context == null)
             {
-                throw new InvalidOperationException(Resources.ErrorHttpContextNotAvailable);
+                throw new InvalidOperationException(
+                    "The PerRequestLifetimeManager can only be used in the context of an HTTP request.Possible causes for this error are using the lifetime manager on a non-ASP.NET application, or using it in a thread that is not associated with the appropriate synchronization context.");
             }
 
             var dict = (Dictionary<object, object>)context.Items[ModuleKey];

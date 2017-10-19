@@ -1,9 +1,9 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
-using Microsoft.Practices.Unity.Mvc;
+using Unity.Lifetime;
 
-namespace Microsoft.Practices.Unity
+namespace Unity.Mvc
 {
     /// <summary>
     /// A <see cref="LifetimeManager"/> that holds onto the instance given to it during
@@ -32,7 +32,7 @@ namespace Microsoft.Practices.Unity
     /// </remarks>
     public class PerRequestLifetimeManager : LifetimeManager
     {
-        private readonly object lifetimeKey = new object();
+        private readonly object _lifetimeKey = new object();
 
         /// <summary>
         /// Retrieves a value from the backing store associated with this lifetime policy.
@@ -40,7 +40,7 @@ namespace Microsoft.Practices.Unity
         /// <returns>The desired object, or null if no such object is currently stored.</returns>
         public override object GetValue()
         {
-            return UnityPerRequestHttpModule.GetValue(this.lifetimeKey);
+            return UnityPerRequestHttpModule.GetValue(_lifetimeKey);
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Practices.Unity
         /// <param name="newValue">The object being stored.</param>
         public override void SetValue(object newValue)
         {
-            UnityPerRequestHttpModule.SetValue(this.lifetimeKey, newValue);
+            UnityPerRequestHttpModule.SetValue(_lifetimeKey, newValue);
         }
 
         /// <summary>
@@ -57,14 +57,11 @@ namespace Microsoft.Practices.Unity
         /// </summary>
         public override void RemoveValue()
         {
-            var disposable = this.GetValue() as IDisposable;
+            var disposable = GetValue() as IDisposable;
 
-            if (disposable != null)
-            {
-                disposable.Dispose();
-            }
+            disposable?.Dispose();
 
-            UnityPerRequestHttpModule.SetValue(this.lifetimeKey, null);
+            UnityPerRequestHttpModule.SetValue(_lifetimeKey, null);
         }
     }
 }

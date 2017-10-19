@@ -3,15 +3,16 @@
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using Unity.Exceptions;
 
-namespace Microsoft.Practices.Unity.Mvc
+namespace Unity.Mvc
 {
     /// <summary>
     /// An implementation of <see cref="IDependencyResolver"/> that wraps a Unity container.
     /// </summary>
     public class UnityDependencyResolver : IDependencyResolver
     {
-        private readonly IUnityContainer container;
+        private readonly IUnityContainer _container;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UnityDependencyResolver"/> class for a container.
@@ -20,7 +21,7 @@ namespace Microsoft.Practices.Unity.Mvc
         /// interface implementation.</param>
         public UnityDependencyResolver(IUnityContainer container)
         {
-            this.container = container;
+            _container = container;
         }
 
         /// <summary>
@@ -32,11 +33,11 @@ namespace Microsoft.Practices.Unity.Mvc
         {
             if (typeof(IController).IsAssignableFrom(serviceType))
             {
-                return this.container.Resolve(serviceType);
+                return _container.Resolve(serviceType);
             }
             try
             {
-                return this.container.Resolve(serviceType);
+                return _container.Resolve(serviceType);
             }
             catch (ResolutionFailedException)
             {
@@ -51,7 +52,7 @@ namespace Microsoft.Practices.Unity.Mvc
         /// <returns>The requested services.</returns>
         public IEnumerable<object> GetServices(Type serviceType)
         {
-            return this.container.ResolveAll(serviceType);
+            return _container.ResolveAll(serviceType);
         }
     }
 }
