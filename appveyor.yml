@@ -2,6 +2,17 @@ image: Visual Studio 2017
 configuration: Release
 platform: Any CPU
 
+install:
+  - ps: $env:build_version = (Get-Content -Raw -Path package.json | ConvertFrom-Json).version 
+  - ps: $env:build_description = (Get-Content -Raw -Path package.json | ConvertFrom-Json).description
+  - ps: Update-AppveyorBuild -Version "$env:build_version.$env:APPVEYOR_BUILD_NUMBER"
+
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: $(build_version)
+  package_version: $(build_version)
+
 before_build:
 - cmd: dotnet restore
 
@@ -9,16 +20,6 @@ build:
   project: package.sln
   parallel: true
   verbosity: minimal
-
-after_build:
-- choco install opencover.portable
-- choco install codecov
-  
-test_script:
-- OpenCover.Console.exe -register:user -target:"C:\Program Files\dotnet\dotnet.exe" -targetargs:"test"
-
-after_test:
-- codecov -f "results.xml" 
 
 artifacts:
 - path: '**\Unity.*.nupkg'
