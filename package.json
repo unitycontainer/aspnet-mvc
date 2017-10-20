@@ -1,0 +1,8 @@
+{
+  "version": "5.0.0",
+  "name": "Unity.Mvc",
+  "description": "The MVC adapter for Unity Container.",
+  "devDependencies": {
+    "Unity.Abstractions": "unitycontainer/abstractions"
+  }
+}
