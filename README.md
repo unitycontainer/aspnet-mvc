@@ -4,6 +4,6 @@
 [![NuGet](https://img.shields.io/nuget/dt/Unity.Interception.Configuration.svg)](https://www.nuget.org/packages/Unity.Interception.Configuration)
 [![NuGet](https://img.shields.io/nuget/v/Unity.Interception.Configuration.svg)](https://www.nuget.org/packages/Unity.Interception.Configuration)
 
-# MVC
+# AspNet.Mvc Adapter
 
 The MVC adapter for Unity Container.
