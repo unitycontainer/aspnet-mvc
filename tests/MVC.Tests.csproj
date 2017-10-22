@@ -13,16 +13,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Unity.Mvc.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="System.Web" />
   </ItemGroup>
-
   
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
+    <ProjectReference Include="..\src\Unity.Mvc.csproj" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(Configuration)' != 'Release' ">
