@@ -18,8 +18,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="content\App_Start\UnityConfig.cs.pp" />
-    <Content Include="content\App_Start\UnityMvcActivator.cs.pp" />
+    <Content Include="App_Start\UnityConfig.cs.pp" />
+    <Content Include="App_Start\UnityMvcActivator.cs.pp" />
   </ItemGroup>
 
   <ItemGroup>
@@ -40,13 +40,14 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DebugType>Full</DebugType>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <TargetFramework>net47</TargetFramework>
+    <TargetFrameworks>net47;net45</TargetFrameworks>
+    <DebugType>Full</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
+    <PackageReference Include="Unity" Version="5.0.0" />
     <PackageReference Include="WebActivatorEx" Version="2.2.0" />
   </ItemGroup>
 

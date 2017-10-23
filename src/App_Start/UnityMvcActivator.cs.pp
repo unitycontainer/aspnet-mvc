@@ -3,8 +3,8 @@ using System.Web.Mvc;
 
 using Unity.Mvc;
 
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(UnityMvcActivator), nameof(UnityMvcActivator.Start))]
-[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(UnityMvcActivator), nameof(UnityMvcActivator.Shutdown))]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof($rootnamespace$.UnityMvcActivator), nameof($rootnamespace$.UnityMvcActivator.Start))]
+[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof($rootnamespace$.UnityMvcActivator), nameof($rootnamespace$.UnityMvcActivator.Shutdown))]
 
 namespace $rootnamespace$
 {
