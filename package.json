@@ -1,5 +1,5 @@
 {
-  "version": "5.0.0",
+  "version": "5.0.1",
   "name": "Unity.Mvc",
   "description": "The MVC adapter for Unity Container.",
   "devDependencies": {
