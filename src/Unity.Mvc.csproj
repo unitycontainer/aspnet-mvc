@@ -47,7 +47,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
-    <PackageReference Include="Unity" Version="5.0.0" />
     <PackageReference Include="WebActivatorEx" Version="2.2.0" />
   </ItemGroup>
 
