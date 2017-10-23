@@ -18,8 +18,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="content\App_Start\UnityConfig.cs.pp" />
-    <Compile Include="content\App_Start\UnityMvcActivator.cs.pp" />
+    <Content Include="content\App_Start\UnityConfig.cs.pp" />
+    <Content Include="content\App_Start\UnityMvcActivator.cs.pp" />
   </ItemGroup>
 
   <ItemGroup>
