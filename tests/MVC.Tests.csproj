@@ -18,13 +18,13 @@
   
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
-    <ProjectReference Include="..\src\Unity.AspNet.Mvc.csproj" />
+    <ProjectReference Include="$(SolutionDir)\src\Unity.AspNet.Mvc.csproj" />
   </ItemGroup>
 
 
   <PropertyGroup>
-    <UnityAbstractions>..\..\Abstractions\src\Unity.Abstractions.csproj</UnityAbstractions>
-    <UnityContainer>..\..\Container\src\Unity.Container.csproj</UnityContainer>
+    <UnityAbstractions>$(SolutionDir)\..\Abstractions\src\Unity.Abstractions.csproj</UnityAbstractions>
+    <UnityContainer>$(SolutionDir)\..\Container\src\Unity.Container.csproj</UnityContainer>
   </PropertyGroup>
 
 

@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 
-using Unity.Mvc;
+using Unity.AspNet.Mvc;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof($rootnamespace$.UnityMvcActivator), nameof($rootnamespace$.UnityMvcActivator.Start))]
 [assembly: WebActivatorEx.ApplicationShutdownMethod(typeof($rootnamespace$.UnityMvcActivator), nameof($rootnamespace$.UnityMvcActivator.Shutdown))]

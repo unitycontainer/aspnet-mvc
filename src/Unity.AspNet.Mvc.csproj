@@ -12,7 +12,7 @@
     <PackageIconUrl>https://avatars1.githubusercontent.com/u/12849707</PackageIconUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>This package is compatible with .NET 4.5 and 4.7 frameworks.</PackageReleaseNotes>
-    <PackageId>Unity.Mvc</PackageId>
+    <PackageId>Unity.AspNet.Mvc</PackageId>
     <Authors>Microsoft.Practices.Unity</Authors>
     <Company>Microsoft.Practices.Unity</Company>
   </PropertyGroup>
@@ -35,7 +35,7 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <TargetFrameworks>net45;net47</TargetFrameworks>
-    <OutputPath>..\lib\</OutputPath>
+    <OutputPath>$(SolutionDir)lib</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -50,16 +50,16 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <UnityAbstractions>..\..\Abstractions\src\Unity.Abstractions.csproj</UnityAbstractions>
+    <UnityAbstractions>$(SolutionDir)\..\Abstractions\src\Unity.Abstractions.csproj</UnityAbstractions>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
-    <DocumentationFile>..\lib\net45\Unity.AspNet.Mvc.xml</DocumentationFile>
+    <DocumentationFile>$(SolutionDir)\lib\net45\Unity.AspNet.Mvc.xml</DocumentationFile>
     <DefineConstants>TRACE;NET45</DefineConstants>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net47|AnyCPU'">
-    <DocumentationFile>..\lib\net47\Unity.AspNet.Mvc.xml</DocumentationFile>
+    <DocumentationFile>$(SolutionDir)\lib\net47\Unity.AspNet.Mvc.xml</DocumentationFile>
     <DefineConstants>TRACE;NET47</DefineConstants>
   </PropertyGroup>
 
