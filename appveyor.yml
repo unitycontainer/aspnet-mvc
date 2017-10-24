@@ -21,11 +21,9 @@ build:
   parallel: true
   verbosity: minimal
 
-  
 test_script:
 - cmd: dotnet test
 
 artifacts:
 - path: '**\Unity.*.nupkg'
   name: 'Unity'
-
