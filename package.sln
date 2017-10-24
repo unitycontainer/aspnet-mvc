@@ -2,9 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unity.Mvc", "src\Unity.Mvc.csproj", "{EECD2BD0-11FC-4A97-8187-E2CA7A744CC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unity.AspNet.Mvc", "src\Unity.AspNet.Mvc.csproj", "{EECD2BD0-11FC-4A97-8187-E2CA7A744CC4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC.Tests", "tests\MVC.Tests.csproj", "{98E27D55-D3DA-4D24-8282-74993989AAA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mvc.Tests", "tests\Mvc.Tests.csproj", "{98E27D55-D3DA-4D24-8282-74993989AAA2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

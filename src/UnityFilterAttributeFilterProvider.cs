@@ -1,9 +1,9 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
-using System.Web.Mvc;
 using System.Collections.Generic;
+using System.Web.Mvc;
 
-namespace Unity.Mvc
+namespace Unity.AspNet.Mvc
 {
     /// <summary>
     /// Defines a filter provider for filter attributes that support injection of Unity dependencies.

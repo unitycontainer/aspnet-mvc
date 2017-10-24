@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Unity.Mvc
+namespace Unity.AspNet.Mvc
 {
     /// <summary>
     /// Implementation of the <see cref="IHttpModule"/> interface that provides support for using the

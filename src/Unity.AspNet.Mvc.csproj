@@ -11,7 +11,7 @@
     <PackageLicenseUrl>https://github.com/unitycontainer/unity/blob/master/LICENSE</PackageLicenseUrl>
     <PackageIconUrl>https://avatars1.githubusercontent.com/u/12849707</PackageIconUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>This package is compatible with .NET 4.5, and 4.7 frameworks.</PackageReleaseNotes>
+    <PackageReleaseNotes>This package is compatible with .NET 4.5 and 4.7 frameworks.</PackageReleaseNotes>
     <PackageId>Unity.Mvc</PackageId>
     <Authors>Microsoft.Practices.Unity</Authors>
     <Company>Microsoft.Practices.Unity</Company>
@@ -32,16 +32,15 @@
     <DelaySign>false</DelaySign>
   </PropertyGroup>
   
-  
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <TargetFrameworks>net47;net45</TargetFrameworks>
-    <OutputPath>$(SolutionDir)lib</OutputPath>
+    <TargetFrameworks>net45;net47</TargetFrameworks>
+    <OutputPath>..\lib\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <TargetFrameworks>net47;net45</TargetFrameworks>
+    <TargetFrameworks>net45;net47</TargetFrameworks>
     <DebugType>Full</DebugType>
   </PropertyGroup>
 
@@ -52,6 +51,24 @@
 
   <PropertyGroup>
     <UnityAbstractions>..\..\Abstractions\src\Unity.Abstractions.csproj</UnityAbstractions>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
+    <DocumentationFile>..\lib\net45\Unity.AspNet.Mvc.xml</DocumentationFile>
+    <DefineConstants>TRACE;NET45</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net47|AnyCPU'">
+    <DocumentationFile>..\lib\net47\Unity.AspNet.Mvc.xml</DocumentationFile>
+    <DefineConstants>TRACE;NET47</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net45|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NET45</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net47|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;NET47</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup Condition="Exists('$(UnityAbstractions)')">

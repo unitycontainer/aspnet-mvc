@@ -1,14 +1,13 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
-using System;
 using System.Linq;
 using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Unity;
-using Unity.Injection;
-using Unity.Mvc;
 
-namespace Microsoft.Practices.Unity.WebIntegation.Tests
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+using Unity.Injection;
+
+namespace Unity.AspNet.Mvc.Tests
 {
     [TestClass]
     public class MvcUnityFilterAttributeFilterProviderFixture
