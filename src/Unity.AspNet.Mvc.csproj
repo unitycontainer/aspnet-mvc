@@ -50,10 +50,6 @@
     <PackageReference Include="WebActivatorEx" Version="2.2.0" />
   </ItemGroup>
 
-  <PropertyGroup>
-    <UnityAbstractions>$(SolutionDir)\..\Abstractions\src\Unity.Abstractions.csproj</UnityAbstractions>
-  </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
     <DocumentationFile>$(SolutionDir)\lib\net45\Unity.AspNet.Mvc.xml</DocumentationFile>
     <DefineConstants>TRACE;NET45</DefineConstants>
