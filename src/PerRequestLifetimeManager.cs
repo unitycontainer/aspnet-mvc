@@ -1,9 +1,10 @@
 ﻿// Copyright (c) Microsoft Corporation. All rights reserved. See License.txt in the project root for license information.
 
 using System;
+
 using Unity.Lifetime;
 
-namespace Unity.Mvc
+namespace Unity.AspNet.Mvc
 {
     /// <summary>
     /// A <see cref="LifetimeManager"/> that holds onto the instance given to it during

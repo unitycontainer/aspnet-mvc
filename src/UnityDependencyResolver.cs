@@ -3,9 +3,10 @@
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+
 using Unity.Exceptions;
 
-namespace Unity.Mvc
+namespace Unity.AspNet.Mvc
 {
     /// <summary>
     /// An implementation of <see cref="IDependencyResolver"/> that wraps a Unity container.
