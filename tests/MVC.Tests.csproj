@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net47</TargetFramework>
     <IsPackable>false</IsPackable>
-    <RootNamespace>Unity.Interception.Tests</RootNamespace>
+    <RootNamespace>Unity.AspNet.Mvc.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
