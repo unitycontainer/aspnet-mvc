@@ -4,6 +4,6 @@
 [![NuGet](https://img.shields.io/nuget/dt/Unity.Mvc.svg)](https://www.nuget.org/packages/Unity.Mvc)
 [![NuGet](https://img.shields.io/nuget/v/Unity.Mvc.svg)](https://www.nuget.org/packages/Unity.Mvc)
 
-# AspNet.Mvc Adapter
+# Mvc 5 Adapter
 
 The MVC adapter for Unity Container.
