@@ -1,20 +1,27 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <Version>5.0.3</Version>
+    <PackageReleaseNotes>This package is compatible with .NET 4.5 and 4.7 frameworks.</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <FileVersion>$(Version).0</FileVersion>
+    <AssemblyVersion>$(Version).0</AssemblyVersion>
+    <PackageId>Unity.Mvc</PackageId>
     <Description>Unity for ASP.NET MVC</Description>
-    <Version>5.0.2</Version>
-    <AssemblyVersion>5.0.2.0</AssemblyVersion>
-    <FileVersion>5.0.2.0</FileVersion>
     <Copyright>Copyright © Microsoft 2008</Copyright>
     <PackageProjectUrl>https://github.com/unitycontainer/aspnet-mvc</PackageProjectUrl>
     <RepositoryUrl>https://github.com/unitycontainer/aspnet-mvc</RepositoryUrl>
     <PackageLicenseUrl>https://github.com/unitycontainer/aspnet-mvc/blob/master/LICENSE</PackageLicenseUrl>
     <PackageIconUrl>https://avatars1.githubusercontent.com/u/12849707</PackageIconUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageReleaseNotes>This package is compatible with .NET 4.5 and 4.7 frameworks.</PackageReleaseNotes>
-    <PackageId>Unity.Mvc</PackageId>
     <Authors>Microsoft.Practices.Unity</Authors>
     <Company>Microsoft.Practices.Unity</Company>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>package.snk</AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+    <RootNamespace>Unity.AspNet.Mvc</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,12 +32,6 @@
   <ItemGroup>
     <Reference Include="System.Web" />
   </ItemGroup>
-
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>package.snk</AssemblyOriginatorKeyFile>
-    <DelaySign>false</DelaySign>
-  </PropertyGroup>
   
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
@@ -47,10 +48,6 @@
     <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.3" />
     <PackageReference Include="WebActivatorEx" Version="2.2.0" />
   </ItemGroup>
-
-  <PropertyGroup>
-    <RootNamespace>Unity.AspNet.Mvc</RootNamespace>
-  </PropertyGroup>
 
   <PropertyGroup>
     <UnityAbstractions>..\..\Abstractions\src\Unity.Abstractions.csproj</UnityAbstractions>
