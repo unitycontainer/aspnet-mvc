@@ -39,7 +39,7 @@ namespace Unity.AspNet.Mvc
         /// Retrieves a value from the backing store associated with this lifetime policy.
         /// </summary>
         /// <returns>The desired object, or null if no such object is currently stored.</returns>
-        public override object GetValue()
+        public override object GetValue(ILifetimeContainer container = null)
         {
             return UnityPerRequestHttpModule.GetValue(_lifetimeKey);
         }
@@ -48,7 +48,7 @@ namespace Unity.AspNet.Mvc
         /// Stores the given value into the backing store for retrieval later.
         /// </summary>
         /// <param name="newValue">The object being stored.</param>
-        public override void SetValue(object newValue)
+        public override void SetValue(object newValue, ILifetimeContainer container = null)
         {
             UnityPerRequestHttpModule.SetValue(_lifetimeKey, newValue);
         }
@@ -56,7 +56,7 @@ namespace Unity.AspNet.Mvc
         /// <summary>
         /// Removes the given object from the backing store.
         /// </summary>
-        public override void RemoveValue()
+        public override void RemoveValue(ILifetimeContainer container = null)
         {
             var disposable = GetValue() as IDisposable;
 
