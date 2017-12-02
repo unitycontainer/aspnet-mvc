@@ -48,6 +48,7 @@ namespace Unity.AspNet.Mvc
         /// Stores the given value into the backing store for retrieval later.
         /// </summary>
         /// <param name="newValue">The object being stored.</param>
+        /// <param name="container"></param>
         public override void SetValue(object newValue, ILifetimeContainer container = null)
         {
             UnityPerRequestHttpModule.SetValue(_lifetimeKey, newValue);
