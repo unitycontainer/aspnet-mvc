@@ -65,5 +65,10 @@ namespace Unity.AspNet.Mvc
 
             UnityPerRequestHttpModule.SetValue(_lifetimeKey, null);
         }
+
+        protected override LifetimeManager OnCreateLifetimeManager()
+        {
+            return new PerRequestLifetimeManager();
+        }
     }
 }
