@@ -43,16 +43,6 @@
     <DebugType>Full</DebugType>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.6" />
-    <PackageReference Include="WebActivatorEx" Version="2.2.0" />
-  </ItemGroup>
-
-  <PropertyGroup>
-    <UnityAbstractions>..\..\Abstractions\src\Unity.Abstractions.csproj</UnityAbstractions>
-    <UnityContainer>..\..\Container\src\Unity.Container.csproj</UnityContainer>
-  </PropertyGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net45|AnyCPU'">
     <DocumentationFile>bin\Release\net45\Unity.Mvc.xml</DocumentationFile>
   </PropertyGroup>
@@ -61,13 +51,11 @@
     <DocumentationFile>bin\Release\net47\Unity.Mvc.xml</DocumentationFile>
   </PropertyGroup>
 
-  <ItemGroup Condition="Exists('$(UnityAbstractions)')">
-    <ProjectReference Include="$(UnityAbstractions)" />
-  </ItemGroup>
 
-  <ItemGroup Condition="!Exists('$(UnityAbstractions)')">
-    <PackageReference Include="Unity.Abstractions" Version="$(UnityAbstractionsVersion)" />
-  </ItemGroup>
+
+  <PropertyGroup>
+    <UnityContainer>..\..\Container\src\Unity.Container.csproj</UnityContainer>
+  </PropertyGroup>
 
   <ItemGroup Condition="Exists('$(UnityContainer)')">
     <ProjectReference Include="$(UnityContainer)" />
@@ -75,6 +63,12 @@
 
   <ItemGroup Condition="!Exists('$(UnityContainer)')">
     <PackageReference Include="Unity.Container" Version="$(UnityContainerVersion)" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Mvc" Version="5.2.6" />
+    <PackageReference Include="WebActivatorEx" Version="2.2.0" />
   </ItemGroup>
 
 </Project>
