@@ -5,8 +5,6 @@ using System.Web.Mvc;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-using Unity.Injection;
-
 namespace Unity.AspNet.Mvc.Tests
 {
     [TestClass]
