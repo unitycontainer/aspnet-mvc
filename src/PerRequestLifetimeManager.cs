@@ -2,8 +2,6 @@
 
 using System;
 
-using Unity.Lifetime;
-
 namespace Unity.AspNet.Mvc
 {
     /// <summary>
