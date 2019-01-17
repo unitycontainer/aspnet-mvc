@@ -1,12 +1,8 @@
-﻿
-
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Linq;
 using System.Web.Mvc;
-
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-using Unity.Exceptions;
+using Unity.Lifetime;
 
 namespace Unity.AspNet.Mvc.Tests
 {
