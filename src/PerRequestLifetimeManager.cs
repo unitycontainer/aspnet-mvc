@@ -28,7 +28,10 @@ namespace Unity.AspNet.Mvc
     /// <code>DynamicModuleUtility.RegisterModule(typeof(UnityPerRequestHttpModule));</code>
     /// </para>
     /// </remarks>
-    public class PerRequestLifetimeManager : LifetimeManager
+    public class PerRequestLifetimeManager : LifetimeManager,
+                                             IInstanceLifetimeManager,
+                                             IFactoryLifetimeManager,
+                                             ITypeLifetimeManager
     {
         private readonly object _lifetimeKey = new object();
 
