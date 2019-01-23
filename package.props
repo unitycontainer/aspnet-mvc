@@ -1,11 +1,12 @@
 <Project>
 
   <PropertyGroup>
-    <Version>5.1.0</Version>
+    <Version>5.9.0</Version>
     <PackageReleaseNotes>This package is compatible with .NET 4.5, 4.6 and 4.7 frameworks.</PackageReleaseNotes>
   </PropertyGroup>
 
   <PropertyGroup>
+    <UnityAbstractionsVersion>4.*</UnityAbstractionsVersion>
     <UnityContainerVersion>5.9.*</UnityContainerVersion>
   </PropertyGroup>
 
