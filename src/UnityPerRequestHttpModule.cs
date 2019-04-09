@@ -28,7 +28,7 @@ namespace Unity.AspNet.Mvc
                 }
             }
 
-            return null;
+            return Lifetime.LifetimeManager.NoValue;
         }
 
         internal static void SetValue(object lifetimeManagerKey, object value)
